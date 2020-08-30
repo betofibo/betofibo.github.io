@@ -1,0 +1,25 @@
+@import "variables";
+
+.v-application {
+  .display-2 {
+    font-size: $display-2-size !important;
+    font-family: $font-family !important;
+    font-weight: 600;
+    line-height: 115%;
+    margin-bottom: 0.125em;
+  }
+
+  .title {
+    font-size: $title !important;
+    font-family: $font-family !important;
+    font-weight: 500;
+    line-height: 115%;
+  }
+
+  .body {
+    font-weight: normal;
+    font-size: $body;
+    font-family: $font-family;
+    line-height: 115%;
+  }
+}
