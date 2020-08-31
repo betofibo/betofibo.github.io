@@ -31,7 +31,9 @@ export default {
   ** Global CSS
   */
   css: [
-    '~/assets/stylesheets.css'
+    '~/assets/stylesheets.css',
+    '~/assets/theme.scss',
+    '~/assets/global.scss',
   ],
   /*
   ** Plugins to load before mounting the App
@@ -51,7 +53,7 @@ export default {
     '@nuxt/typescript-build',
     // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module',
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
   ],
   /*
   ** Nuxt.js modules
@@ -60,8 +62,20 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     // Doc: https://github.com/nuxt/content
-    '@nuxt/content'
+    '@nuxt/content',
+    '@nuxtjs/strapi',
+    '@nuxtjs/markdownit',
   ],
+  strapi: {
+    entities: ['posts'],
+    url: 'http://161.35.232.167'
+  },
+  markdownit: {
+    preset: 'default',
+    linkify: true,
+    breaks: true,
+    injected: true
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options

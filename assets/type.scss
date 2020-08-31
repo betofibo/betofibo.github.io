@@ -9,11 +9,30 @@
     margin-bottom: 0.125em;
   }
 
+  .header,
+  h1 {
+    font-family: $font-family;
+    font-size: $header;
+    line-height: 100%;
+    margin-bottom: 0.125em;
+    font-weight: 600;
+  }
+
+  .subheader,
+  h2 {
+    font-family: $font-family !important;
+    font-size: $subheader !important;
+    line-height: 115% !important;
+    margin-bottom: 0.125em !important;
+    font-weight: 600 !important;
+  }
+
   .title {
     font-size: $title !important;
     font-family: $font-family !important;
     font-weight: 500;
     line-height: 115%;
+    margin-bottom: 0.125em;
   }
 
   .body {
@@ -21,5 +40,23 @@
     font-size: $body;
     font-family: $font-family;
     line-height: 115%;
+    margin-bottom: 0.125em;
+  }
+
+  .base {
+    font-weight: 600;
+    font-size: $body;
+    font-family: $font-family;
+    line-height: 115%;
+    margin-bottom: 0.125em;
+  }
+
+  .caption {
+    font-weight: normal;
+    font-size: $caption;
+    font-family: $font-family;
+    line-height: 115%;
+    letter-spacing: normal;
+    margin-bottom: 0.125em;
   }
 }

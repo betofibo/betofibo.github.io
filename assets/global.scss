@@ -1,0 +1,12 @@
+@import "variables";
+@import '~vuetify/src/styles/settings/_variables';
+
+.v-application {
+  font-family: $font-family !important;
+}
+
+@media #{map-get($display-breakpoints, 'lg-and-up')} {
+  .container {
+    max-width: 1185px;
+  }
+}
