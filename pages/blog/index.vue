@@ -126,7 +126,7 @@
 }
 </style>
 <script lang="ts">
-import BlogPreview from "../components/BlogPopular.vue";
+import BlogPreview from "~/components/BlogPopular.vue";
 import {IPost} from "~/models";
 import Component from "vue-class-component";
 import Vue from 'vue';

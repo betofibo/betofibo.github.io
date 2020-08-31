@@ -22,7 +22,7 @@
           text
           color="teal"
           nuxt
-          :href="'/posts/'+ postId"
+          :href="'/blog/posts/'+ postId"
           :ripple="false">Leer articulo<v-icon right dark>mdi-arrow-right</v-icon></v-btn>
       </div>
       <v-btn
@@ -30,7 +30,7 @@
         class="float-right"
         text color="teal"
         nuxt
-        :href="'/posts/'+ postId"
+        :href="'/blog/posts/'+ postId"
         :ripple="false">Leer articulo<v-icon right dark>mdi-arrow-right</v-icon></v-btn>
     </div>
   </div>

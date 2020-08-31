@@ -1,0 +1,9 @@
+@import "variables";
+
+.v-btn.v-btn.v-size--default {
+  font-family: $font-family !important;
+  font-weight: 600 !important;
+  font-size: $base-size;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+}

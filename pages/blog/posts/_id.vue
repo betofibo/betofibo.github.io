@@ -113,7 +113,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import {IPost} from "~/models";
-import BlogPreview from "../../components/BlogPopular.vue";
+import BlogPreview from "~/components/BlogPopular.vue";
 import {Component} from "vue-property-decorator";
 
 @Component({
