@@ -28,6 +28,24 @@
           </div>
         </v-col>
       </v-row>
+      <v-row class="container">
+        <v-col sm="10" offset-sm="1" md="10" lg="6" offset-md="3">
+          <h2 class="mt-4 title text-black-lighten-2">Más contenido</h2>
+          <v-divider class="black mb-lg-12"></v-divider>
+          <BlogPopular
+            v-for="post in morePosts"
+            :key="'recent' + post.id"
+            :postId="post.id"
+            small
+            class="mb-16 mt-4"
+            :title="post.title"
+            :summary="post.summary"
+            :author="post.author"
+            :date="post.date"
+            :thumbnail="post.thumbnailUrl"
+          />
+        </v-col>
+      </v-row>
     </v-container>
   </div>
 </template>
@@ -35,7 +53,7 @@
 <style lang="scss">
 @import '~vuetify/src/styles/settings/_variables';
 
-.fs-post-content {
+#app.v-application .fs-post .fs-post-content {
   h2 {
     margin-top: 1.5em;
     margin-bottom: 1em !important;
@@ -93,23 +111,32 @@
 </style>
 
 <script lang="ts">
-import { Vue, Component, Prop } from 'vue-property-decorator';
+import Vue from 'vue';
 import {IPost} from "~/models";
+import BlogPreview from "../../components/BlogPopular.vue";
+import {Component} from "vue-property-decorator";
 
-@Component
+@Component({
+  components: {
+    BlogPreview
+  }
+})
 export default class Post extends Vue {
   public post: IPost = {
-    blog_categories: [{name: ''}]
+    blog_categories: {}
   };
   public $strapi: any;
   public $route: any;
   public $md: any;
   public content = '';
+  public morePosts = [];
 
   async mounted() {
     try {
       this.post = await this.$strapi.find(`blog-posts/${parseInt(this.$route.params.id)}`);
-      this.content = this.$md.render(this.post.article);
+      this.content = this.post.article || '';
+      this.morePosts = await this.$strapi.find('blog-posts');
+      this.morePosts = this.morePosts.slice(1,3);
     } catch (error) {
       console.log(error);
     }

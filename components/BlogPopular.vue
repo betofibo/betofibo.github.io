@@ -17,9 +17,21 @@
         <p class="text-black-lighten-2" v-bind:class="[{ body: !large}, { title: large }]">
           {{ summary }}
         </p>
-        <v-btn class="float-right" text color="teal" href="text" :ripple="false">Leer articulo<v-icon right dark>mdi-arrow-right</v-icon></v-btn>
+        <v-btn
+          class="float-right"
+          text
+          color="teal"
+          nuxt
+          :href="'/posts/'+ postId"
+          :ripple="false">Leer articulo<v-icon right dark>mdi-arrow-right</v-icon></v-btn>
       </div>
-      <v-btn v-if="small" class="float-right" text color="teal" href="text" :ripple="false">Leer articulo<v-icon right dark>mdi-arrow-right</v-icon></v-btn>
+      <v-btn
+        v-if="small"
+        class="float-right"
+        text color="teal"
+        nuxt
+        :href="'/posts/'+ postId"
+        :ripple="false">Leer articulo<v-icon right dark>mdi-arrow-right</v-icon></v-btn>
     </div>
   </div>
 </template>
@@ -34,7 +46,7 @@
 .fs-post-preview {
   .thumbnail {
     overflow: hidden;
-    height: 240px;
+    height: 200px;
     position: relative;
 
     .overlay {
@@ -97,5 +109,6 @@ export default class BlogPreview extends Vue {
   @Prop({ type: String, required: true }) readonly date!: string;
   @Prop({ type: String, required: true }) readonly author!: string;
   @Prop({ type: String, required: true }) readonly thumbnail!: string;
+  @Prop({ type: Number, required: true }) readonly postId!: number;
 }
 </script>
