@@ -9,7 +9,7 @@
       </div>
       <v-container class="pa-6">
           <v-row class="mt-12">
-            <v-col md="6" xs="12" sm="8" lg="8" offset-sm="1" offset-md="0" style="z-index: 1; position: relative;">
+            <v-col md="6" xs="12" sm="8" lg="8" xl="6" offset-sm="1" offset-md="0" style="z-index: 1; position: relative;">
               <div class="landing-header-box">
                 <div class="landing-header-box__content">
                   <h1 class="text-white" v-bind:class="[{'subheader': $vuetify.breakpoint.xsOnly}, {'header': !$vuetify.breakpoint.mobile}]">Descubre la importancia de la nube en la transformación digital <v-icon large color="white">mdi-arrow-right</v-icon></h1>
@@ -21,11 +21,50 @@
       </v-container>
     </div>
     <Services></Services>
+    <v-container style="height: 600px;">
+      <v-row align="center" style="height: 100%;">
+        <v-col cols="10" sm="8" offset-md="2" offset="1" offset-sm="2">
+            <div class="fs-landing-quote">
+              <div class="fs-landing-quote__box"></div>
+              <h4 class="title fs-landing-quote__content text-black-lighten-2">
+                Our software development process drives innovation that can provide disrupting results through an entire
+                organization by bringing the best people in house to collaborate and create solutions that will always provide
+                true and lasting value for your organization.
+              </h4>
+            </div>
+        </v-col>
+      </v-row>
+    </v-container>
   </v-layout>
 </template>
 <style lang="scss">
 @import "assets/variables";
 @import '~vuetify/src/styles/settings/_variables';
+
+.fs-landing-quote {
+  position: relative;
+
+  .fs-landing-quote__content {
+    z-index: 1;
+    position: relative;
+    background-color: $white;
+    padding: 1em;
+  }
+
+  .fs-landing-quote__box {
+    position: absolute;
+    padding: 0.5em;
+    border: 10px solid;
+    border-image-slice: 1;
+    border-width: 5px;
+    height: 250px;
+    width: 250px;
+    left: -1em;
+    top: -1em;
+    z-index: 0;
+    border-image-source: linear-gradient(0deg, #37ecba 0%, #72afd3 100%);
+  }
+}
 
 .landing-header {
   height: 90vh;
@@ -68,6 +107,19 @@
 }
 
 @media #{map-get($display-breakpoints, 'md-and-up')} {
+  .fs-landing-quote {
+    .fs-landing-quote__box {
+      top: -0.3em;
+      width: 400px;
+      height: 200px;
+      left: -2em;
+    }
+
+    .fs-landing-quote__content {
+      padding: 3em;
+    }
+  }
+
   .landing-header {
     background-size: cover;
     padding: 70px 32px 100px 32px;
