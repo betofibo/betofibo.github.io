@@ -10,7 +10,7 @@
       <v-spacer />
       <div v-if="!$vuetify.breakpoint.mobile" style="height: 100%;">
         <v-btn :ripple="false" nuxt to="/" exact exact-active-class="active" text color="white">Inicio</v-btn>
-        <v-btn :ripple="false" text color="white">Servicios</v-btn>
+        <v-btn :ripple="false" text to="/#services" color="white">Servicios</v-btn>
         <v-btn :ripple="false" nuxt to="/blog" exact exact-active-class="active" text color="white">Insights</v-btn>
         <v-btn :ripple="false" text color="white">Contacto</v-btn>
       </div>
@@ -118,6 +118,7 @@
     padding-left: 3em;
     padding-right: 3em;
     border-left: 1px solid rgb(255, 255, 255, 0.4);
+    margin-left: -3px;
   }
 }
 </style>
