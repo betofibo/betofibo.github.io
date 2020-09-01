@@ -20,94 +20,7 @@
           </v-row>
       </v-container>
     </div>
-    <div class="container">
-      <v-container>
-        <v-row :justify="!$vuetify.breakpoint.mobile ? 'space-around' : 'start'" :style="$vuetify.breakpoint.mobile ? 'flex-wrap: nowrap; overflow-x: scroll;' : ''">
-          <v-col>
-            <v-btn large block :ripple="false" text class="center">Todo</v-btn>
-          </v-col>
-          <v-col>
-            <v-btn large block :ripple="false" text class="center">Tecnologìa</v-btn>
-          </v-col>
-          <v-col>
-            <v-btn large block :ripple="false" text class="center">Diseño</v-btn>
-          </v-col>
-          <v-col>
-            <v-btn large block :ripple="false" text class="center">Estretegìa</v-btn>
-          </v-col>
-        </v-row>
-        <v-row>
-          <v-col>
-            <h1 class="text-center header my-10">Diseño</h1>
-          </v-col>
-        </v-row>
-        <v-row>
-          <v-col
-            cols="12"
-            sm="10"
-            md="8"
-            xl="7"
-            offset-sm="1"
-            offset-md="0"
-          >
-            <h2 class="title text-black-lighten-2">Popular</h2>
-            <v-divider class="black mb-lg-12"></v-divider>
-            <BlogPopular
-              :large="!$vuetify.breakpoint.mobile"
-              class="mb-16 mt-4"
-              :title="popularPost.title"
-              :summary="popularPost.summary"
-              :author="popularPost.author"
-              :date="popularPost.date"
-              :postId="popularPost.id"
-              :thumbnail="popularPost.thumbnailUrl"
-            />
-          </v-col>
-          <v-col
-            class="ml-xl-8"
-            sm="10"
-            md="4"
-            offset-sm="1"
-            offset-md="0"
-          >
-            <h2 class="title text-black-lighten-2">Lo último</h2>
-            <v-divider class="black mb-lg-12"></v-divider>
-            <BlogPopular
-              v-for="post in recentPosts"
-              :key="'recent' + post.id"
-              :postId="post.id"
-              small
-              class="mb-16 mt-4"
-              :title="post.title"
-              :summary="post.summary"
-              :author="post.author"
-              :date="post.date"
-              :thumbnail="post.thumbnailUrl"
-            />
-          </v-col>
-        </v-row>
-        <v-row>
-          <v-col
-            sm="10"
-            md="4"
-            lg="4"
-            offset-sm="1"
-            offset-md="0"
-            v-for="post in morePost"
-            :key="'more-' + post.id">
-            <BlogPopular
-              class="mb-16 mt-4"
-              :title="post.title"
-              :summary="post.summary"
-              :author="post.author"
-              :date="post.date"
-              :thumbnail="post.thumbnailUrl"
-              :postId="post.id"
-            />
-          </v-col>
-        </v-row>
-      </v-container>
-    </div>
+    <Services></Services>
   </v-layout>
 </template>
 <style lang="scss">
@@ -149,7 +62,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 0;
   }
 }
@@ -170,10 +83,12 @@ import BlogPreview from "@/components/BlogPopular.vue";
 import {IPost} from "~/models";
 import Component from "vue-class-component";
 import Vue from 'vue';
+import Services from "~/components/Services.vue";
 
 @Component({
   components: {
-    BlogPreview
+    BlogPreview,
+    Services,
   }
 })
 export default class LandingPage extends Vue {
