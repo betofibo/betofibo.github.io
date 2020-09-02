@@ -10,7 +10,7 @@
               <p class="title text-white">Diseño</p>
               <h2 class="header mt-6">COVID-19: Post-Coronavirus technology trends</h2>
               <p class="title text-white mt-6">Learn about actions we’re taking to fight racism inside and outside of Accenture.</p>
-              <v-btn large :ripple="false" class="fs-button-dark mt-6" color="white">Leer artículo <v-icon right>mdi-arrow-right</v-icon></v-btn>
+              <v-btn large depressed :ripple="false" class="fs-button-dark mt-6" color="white">Leer artículo <v-icon right>mdi-arrow-right</v-icon></v-btn>
             </v-col>
           </v-row>
         </v-container>
@@ -18,8 +18,8 @@
       <div class="fs-landing-post-image">
       </div>
     </div>
-    <v-container fluid>
-      <v-row>
+    <v-container :fluid="$vuetify.breakpoint.xsOnly">
+      <v-row class="container">
         <v-col
           cols="12"
           md="4"
@@ -35,6 +35,9 @@
             :thumbnail="post.thumbnailUrl"
           />
         </v-col>
+        <hr color="grey" width="100%">
+        <v-btn block flat text large color="black" :ripple="false">Leer todo <v-icon right>mdi-arrow-right</v-icon></v-btn>
+        <hr color="grey" width="100%" class="mb-6">
       </v-row>
     </v-container>
   </div>

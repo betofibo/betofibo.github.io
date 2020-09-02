@@ -36,11 +36,34 @@
       </v-row>
     </v-container>
     <LandingBlog></LandingBlog>
+    <div class="fs-landing-project">
+      <v-container class="py-sm-16">
+        <div class="container">
+          <v-row>
+            <v-col cols="12" md="4" offset-md="1">
+              <h4 class="title">Proyecto</h4>
+              <h1 class="header my-8">General de Baleros</h1>
+              <p class="mt-8" v-bind:class="[{'body': $vuetify.breakpoint.xsOnly}, {'body': $vuetify.breakpoint.xsOnly}]">Solución de ERP construido a la medida de las necesidades de la operación de General de Baleros.</p>
+            </v-col>
+            <v-col>
+              <img src="~assets/img/custom_erp.jpg" alt="">
+            </v-col>
+          </v-row>
+        </div>
+      </v-container>
+    </div>
   </v-layout>
 </template>
 <style lang="scss">
 @import "assets/variables";
 @import '~vuetify/src/styles/settings/_variables';
+
+.fs-landing-project {
+  background-color: $black;
+  color: $white;
+  position: relative;
+  width: 100%;
+}
 
 .fs-landing-quote {
   position: relative;
@@ -108,6 +131,17 @@
 }
 
 @media #{map-get($display-breakpoints, 'md-and-up')} {
+  .fs-landing-project {
+    height: 700px;
+
+    img {
+      position: absolute;
+      top: 0;
+      right: -50%;
+      height: 100%;
+    }
+  }
+
   .fs-landing-quote {
     .fs-landing-quote__box {
       top: -0.3em;

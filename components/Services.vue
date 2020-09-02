@@ -9,7 +9,7 @@
               <v-row>
                 <v-col md="6" sm="8">
                   <h3 class="text-white" :class="[{'subheader': $vuetify.breakpoint.xsOnly}, {'display-2': $vuetify.breakpoint.smAndUp}]">Amplicaciones basadas en la nube</h3>
-                  <p class="text-black-lighten-3" :class="[{'body': $vuetify.breakpoint.xsOnly}, {'title': $vuetify.breakpoint.smAndUp}]">Soluciones de software a la medida que permitairan a tu equipo operar desde cualquier lugar</p>
+                  <p class="text-white" :class="[{'body': $vuetify.breakpoint.xsOnly}, {'title': $vuetify.breakpoint.smAndUp}]">Soluciones de software a la medida que permitairan a tu equipo operar desde cualquier lugar</p>
                 </v-col>
                 <v-col md="6" sm="10">
                   <v-list color="transparent" class="ml-0">
@@ -120,7 +120,7 @@
     height: 150px;
     width: 100%;
     transition: background 300ms ease-in;
-    background: black;
+    background: black !important;
     //border: 1px solid rgba(255, 255, 255, 0.2);
     margin: 0;
 
@@ -164,6 +164,8 @@
   .fs-services {
     .fs-service__detail {
       position: absolute;
+      height: 75%;
+      transform: translate3d(0, 141%, 0);
     }
 
     .fs-services__element {
