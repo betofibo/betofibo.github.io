@@ -9,7 +9,7 @@
       </div>
       <v-container class="pa-6">
           <v-row class="mt-12">
-            <v-col md="6" xs="12" sm="8" lg="8" xl="6" offset-sm="1" offset-md="0" style="z-index: 1; position: relative;">
+            <v-col md="6" xs="12" sm="8" lg="8" xl="6" offset-sm="1" offset-md="0" offset-xl="2" style="z-index: 1; position: relative;">
               <div class="landing-header-box">
                 <div class="landing-header-box__content">
                   <h1 class="text-white" v-bind:class="[{'subheader': $vuetify.breakpoint.xsOnly}, {'header': !$vuetify.breakpoint.mobile}]">Descubre la importancia de la nube en la transformación digital <v-icon large color="white">mdi-arrow-right</v-icon></h1>
@@ -35,6 +35,7 @@
         </v-col>
       </v-row>
     </v-container>
+    <LandingBlog></LandingBlog>
   </v-layout>
 </template>
 <style lang="scss">
@@ -136,11 +137,13 @@ import {IPost} from "~/models";
 import Component from "vue-class-component";
 import Vue from 'vue';
 import Services from "~/components/Services.vue";
+import LandingBlog from "~/components/LandingBlog.vue";
 
 @Component({
   components: {
     BlogPreview,
     Services,
+    LandingBlog
   }
 })
 export default class LandingPage extends Vue {

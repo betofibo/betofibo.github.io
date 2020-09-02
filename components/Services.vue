@@ -1,6 +1,7 @@
 <template>
   <div class="fs-services" v-bind:class="[{ 'container': $vuetify.breakpoint.xsOnly }]">
     <v-container class="content-container">
+      <h2 class="text-white text-center pb-16" :class="[{'header': $vuetify.breakpoint.xsOnly, 'display-2 ': !$vuetify.breakpoint.xsOnly}]">Soluciones</h2>
       <div class="fs-service__detail-container">
           <v-card v-bind:class="[{ 'active': showServiceDetail }]" class="fs-service__detail pa-12">
         <v-scroll-y-reverse-transition>
@@ -95,7 +96,7 @@
     background-repeat: no-repeat;
     background-position: center;
     transition: all 500ms cubic-bezier(1, 0, 0, 1); /* easeInOutExpo */
-    transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 101%, 0);
 
     #closeButton {
       position: absolute;
@@ -120,7 +121,7 @@
     width: 100%;
     transition: background 300ms ease-in;
     background: black;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    //border: 1px solid rgba(255, 255, 255, 0.2);
     margin: 0;
 
     &:hover {

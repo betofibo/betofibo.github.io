@@ -1,9 +1,17 @@
 @import "variables";
 
-.v-btn.v-btn.v-size--default {
+.v-btn.v-btn.v-size--default,
+.v-btn.v-btn.v-size--large {
   font-family: $font-family !important;
   font-weight: 600 !important;
   font-size: $base-size;
   text-transform: none !important;
   letter-spacing: 0 !important;
+  border-radius: 0 !important;
+}
+
+.fs-button-dark {
+  width: 300px;
+  color: teal !important;
+  justify-content: space-between !important;
 }
