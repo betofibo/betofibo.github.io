@@ -103,7 +103,7 @@ export default class LandingBlog extends Vue {
     thumbnailUrl: '',
     author: '',
     date: '',
-    blog_categories: {
+    category: {
       id: 0,
       name: '',
     }

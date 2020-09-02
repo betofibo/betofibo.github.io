@@ -149,7 +149,7 @@ export default class BlogPage extends Vue {
     thumbnailUrl: '',
     author: '',
     date: '',
-    blog_categories: {
+    category: {
       id: 0,
       name: '',
     }

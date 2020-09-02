@@ -206,7 +206,7 @@ export default class LandingPage extends Vue {
     thumbnailUrl: '',
     author: '',
     date: '',
-    blog_categories: {
+    category: {
       id: 0,
       name: '',
     }
@@ -214,7 +214,7 @@ export default class LandingPage extends Vue {
 
   async mounted () {
     try {
-      this.allPosts = await this.$strapi.find('blog-posts');
+      this.allPosts = await this.$strapi.find('posts');
       this.popularPost = this.allPosts[0];
       this.recentPosts = this.allPosts.slice(1, 4);
       this.morePost = this.allPosts.slice(1,4)

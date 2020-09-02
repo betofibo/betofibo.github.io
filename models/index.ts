@@ -12,5 +12,5 @@ export interface IPost {
   author?: string;
   date?: string;
   imageUrl?: string;
-  blog_categories?: ICategory,
+  category?: ICategory,
 }

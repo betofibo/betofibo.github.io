@@ -7,7 +7,7 @@
         <v-row class="container" style="height: 100%;">
           <v-col sm="10" offset-sm="1" md="10" lg="6" offset-md="3" style="position: relative; height: 100%;">
             <div class="fs-post-header__content">
-              <h5 class="text-white base">{{post.blog_categories.name}}</h5>
+              <h5 class="text-white base">{{post.category.name}}</h5>
               <h3 class="my-2 header text-white my-6">
                 {{ post.title }}
               </h3>
@@ -23,7 +23,7 @@
       <v-row class="container">
         <v-col sm="10" offset-sm="1" md="10" lg="6" offset-md="3">
           <div class="fs-post-content">
-            <div  v-html="content">
+            <div  v-html="$md.render(content)">
             </div>
           </div>
         </v-col>
@@ -123,7 +123,7 @@ import {Component} from "vue-property-decorator";
 })
 export default class Post extends Vue {
   public post: IPost = {
-    blog_categories: {}
+    category: {}
   };
   public $strapi: any;
   public $route: any;
