@@ -6,9 +6,9 @@
         </div>
         <v-container >
           <v-row class="container py-16" style="height: 100%;" align="center">
-            <v-col cols="12" offset-sm="2" sm="8" style="z-index: 2;">
+            <v-col cols="12" offset-sm="2" sm="8" xl="5" style="z-index: 2;">
               <p class="title text-white">Diseño</p>
-              <h2 class="header mt-6">COVID-19: Post-Coronavirus technology trends</h2>
+              <h1 class="mt-6" v-bind:class="[{'header': !$vuetify.breakpoint.xlOnly}]">COVID-19: Post-Coronavirus technology trends</h1>
               <p class="title text-white mt-6">Learn about actions we’re taking to fight racism inside and outside of Accenture.</p>
               <v-btn large depressed :ripple="false" class="fs-button-dark mt-6" color="white">Leer artículo <v-icon right>mdi-arrow-right</v-icon></v-btn>
             </v-col>
@@ -36,7 +36,7 @@
           />
         </v-col>
         <hr color="grey" width="100%">
-        <v-btn block flat text large color="black" :ripple="false">Leer todo <v-icon right>mdi-arrow-right</v-icon></v-btn>
+        <v-btn block text large color="black" :ripple="false">Leer todo <v-icon right>mdi-arrow-right</v-icon></v-btn>
         <hr color="grey" width="100%" class="mb-6">
       </v-row>
     </v-container>

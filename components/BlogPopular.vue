@@ -5,7 +5,7 @@
       <img class="image" alt="source" :src="thumbnail">
     </div>
     <div>
-      <div class="heading">
+      <div class="heading px-xl-8">
         <h3 class="my-2" v-bind:class="[{ subheader: !large & !small}, { header: large }, { title: small }]">
           {{ title }}
         </h3>
@@ -13,7 +13,7 @@
           <span class="text-black-lighten-1">Por {{author}}</span> | <span class="text-black-lighten-1">{{date}}</span>
         </div>
       </div>
-      <div class="summary flex flex-column flex-end" v-if="!small">
+      <div class="summary flex flex-column flex-end px-xl-8" v-if="!small">
         <p class="text-black-lighten-2" v-bind:class="[{ body: !large}, { title: large }]">
           {{ summary }}
         </p>

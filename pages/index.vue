@@ -12,7 +12,7 @@
             <v-col md="6" xs="12" sm="8" lg="8" xl="6" offset-sm="1" offset-md="0" offset-xl="2" style="z-index: 1; position: relative;">
               <div class="landing-header-box">
                 <div class="landing-header-box__content">
-                  <h1 class="text-white" v-bind:class="[{'subheader': $vuetify.breakpoint.xsOnly}, {'header': !$vuetify.breakpoint.mobile}]">Descubre la importancia de la nube en la transformación digital <v-icon large color="white">mdi-arrow-right</v-icon></h1>
+                  <h1 class="text-white" v-bind:class="[{'subheader': $vuetify.breakpoint.xsOnly}, {'header': !$vuetify.breakpoint.mobile}, {'display-2': $vuetify.breakpoint.xlOnly}]">Descubre la importancia de la nube en la transformación digital <v-icon large color="white">mdi-arrow-right</v-icon></h1>
                   <p class="title text-white" style="opacity: 0.9;">Need a fresh perspective on tomorrow? Accenture Insights has the latest business trends, solutions and visions for the future. We're happy to share.</p>
                 </div>
               </div>
@@ -43,7 +43,7 @@
             <v-col cols="12" md="4" offset-md="1">
               <h4 class="title">Proyecto</h4>
               <h1 class="header my-8">General de Baleros</h1>
-              <p class="mt-8" v-bind:class="[{'body': $vuetify.breakpoint.xsOnly}, {'body': $vuetify.breakpoint.xsOnly}]">Solución de ERP construido a la medida de las necesidades de la operación de General de Baleros.</p>
+              <p class="mt-8" v-bind:class="[{'body': $vuetify.breakpoint.xsOnly}, {'title': !$vuetify.breakpoint.xsOnly}]">Solución de ERP construido a la medida de las necesidades de la operación de General de Baleros.</p>
             </v-col>
             <v-col>
               <img src="~assets/img/custom_erp.jpg" alt="">
@@ -78,14 +78,16 @@
   .fs-landing-quote__box {
     position: absolute;
     padding: 0.5em;
-    border: 10px solid;
-    border-image-slice: 1;
     border-width: 5px;
+    border-style: solid;
+    border-image-slice: 1;
     height: 250px;
     width: 250px;
     left: -1em;
     top: -1em;
     z-index: 0;
+    -moz-border-image-source: -moz-linear-gradient(0deg, #37ecba 0%, #72afd3 100%);
+    -webkit-border-image-source: -webkit-linear-gradient(0deg, #37ecba 0%, #72afd3 100%);
     border-image-source: linear-gradient(0deg, #37ecba 0%, #72afd3 100%);
   }
 }
@@ -101,10 +103,12 @@
 
   .landing-header-box {
     padding: 0.5em;
-    border: 10px solid;
     border-image-slice: 1;
-    border-width: 5px;
+    -moz-border-image-source: -moz-linear-gradient(0deg, #37ecba 0%, #72afd3 100%);
+    -webkit-border-image-source: -webkit-linear-gradient(0deg, #37ecba 0%, #72afd3 100%);
     border-image-source: linear-gradient(0deg, #37ecba 0%, #72afd3 100%);
+    border-width: 5px;
+    border-style: solid;
 
     .landing-header-box__content {
       width: 100%;
@@ -130,6 +134,14 @@
   }
 }
 
+@media #{map-get($display-breakpoints, 'xl-only')} {
+  .fs-landing-project {
+    img {
+      right: -20% !important;
+    }
+  }
+}
+
 @media #{map-get($display-breakpoints, 'md-and-up')} {
   .fs-landing-project {
     height: 700px;
@@ -139,6 +151,7 @@
       top: 0;
       right: -50%;
       height: 100%;
+      width: auto;
     }
   }
 

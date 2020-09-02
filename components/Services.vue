@@ -1,7 +1,7 @@
 <template>
   <div class="fs-services" v-bind:class="[{ 'container': $vuetify.breakpoint.xsOnly }]">
     <v-container class="content-container">
-      <h2 class="text-white text-center pb-16" :class="[{'header': $vuetify.breakpoint.xsOnly, 'display-2 ': !$vuetify.breakpoint.xsOnly}]">Soluciones</h2>
+      <h2 class="text-white text-center py-16" :class="[{'header': $vuetify.breakpoint.xsOnly, 'display-2 ': !$vuetify.breakpoint.xsOnly}]">Soluciones</h2>
       <div class="fs-service__detail-container">
           <v-card v-bind:class="[{ 'active': showServiceDetail }]" class="fs-service__detail pa-12">
         <v-scroll-y-reverse-transition>
@@ -63,7 +63,6 @@
 @import '~vuetify/src/styles/settings/_variables';
 
 .fs-services {
-  height: auto;
   width: 100%;
   background-image: url("~assets/img/services_bg.jpg");
   background-size: cover;
@@ -78,7 +77,7 @@
 
   .fs-service__detail-container {
     overflow: hidden;
-    height: 100%;
+    height: 600px;
     width: 100%;
     position: absolute;
   }
@@ -121,11 +120,10 @@
     width: 100%;
     transition: background 300ms ease-in;
     background: black !important;
-    //border: 1px solid rgba(255, 255, 255, 0.2);
     margin: 0;
 
     &:hover {
-      background: linear-gradient(6.41deg, #2dc9b6 -0.05%, rgba(59, 127, 142, 0.72) 44.76%, rgba(12, 175, 198, 0) 105.59%);
+      background: linear-gradient(6.41deg, #2dc9b6 -0.05%, rgba(59, 127, 142, 0.72) 44.76%, rgba(12, 175, 198, 0) 105.59%) !important;
       cursor: pointer;
 
       .fs-services__element-symbol.header {
@@ -158,13 +156,13 @@
 
 @media #{map-get($display-breakpoints, 'md-and-up')} {
   .content-container {
-    max-width: 998px;
+    max-width: 998px !important;
   }
 
   .fs-services {
     .fs-service__detail {
       position: absolute;
-      height: 75%;
+      height: 100%;
       transform: translate3d(0, 141%, 0);
     }
 
