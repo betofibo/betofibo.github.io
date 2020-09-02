@@ -68,7 +68,7 @@ export default {
   ],
   strapi: {
     entities: ['posts'],
-    url: 'http://161.35.232.167'
+    url: 'https://obscure-journey-20618.herokuapp.com/'
   },
   markdownit: {
     preset: 'default',
