@@ -133,9 +133,9 @@ export default class Post extends Vue {
 
   async mounted() {
     try {
-      this.post = await this.$strapi.find(`blog-posts/${parseInt(this.$route.params.id)}`);
+      this.post = await this.$strapi.find(`posts/${parseInt(this.$route.params.id)}`);
       this.content = this.post.article || '';
-      this.morePosts = await this.$strapi.find('blog-posts');
+      this.morePosts = await this.$strapi.find('posts');
       this.morePosts = this.morePosts.slice(1,3);
     } catch (error) {
       console.log(error);

@@ -157,7 +157,7 @@ export default class BlogPage extends Vue {
 
   async mounted () {
     try {
-      this.allPosts = await this.$strapi.find('blog-posts');
+      this.allPosts = await this.$strapi.find('posts');
       this.popularPost = this.allPosts[0];
       this.recentPosts = this.allPosts.slice(1, 4);
       this.morePost = this.allPosts.slice(1,4)
