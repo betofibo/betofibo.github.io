@@ -1,5 +1,5 @@
 <template>
-  <div class="fs-services" v-bind:class="[{ 'container': $vuetify.breakpoint.xsOnly }]">
+  <div class="fs-services" v-bind:class="[{ 'container': $vuetify.breakpoint.xsOnly }]" id="servicesSection">
     <v-container class="content-container">
       <h3 class="text-white text-center py-16" :class="[{'header': $vuetify.breakpoint.xsOnly, 'header': !$vuetify.breakpoint.xsOnly}]">Soluciones</h3>
       <div class="fs-service__detail-container">

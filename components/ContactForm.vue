@@ -1,5 +1,5 @@
 <template>
-  <div class="fs-contact">
+  <div class="fs-contact" id="contactSection">
     <v-container fluid class="pa-0 fill-height">
       <v-row no-gutters class="fill-height">
         <v-col cols="12" sm="12" md="6">

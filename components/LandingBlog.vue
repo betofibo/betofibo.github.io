@@ -8,16 +8,16 @@
           <v-row style="height: 100%;" align="center" class="px-2 py-4">
             <v-col cols="12" offset-sm="2" offset-md="3" sm="8" xl="5" style="z-index: 2;">
               <div class="py-sm-16">
-                <p class="title text-white">Diseño</p>
-                <h1 class="mt-6" v-bind:class="[{'header': !$vuetify.breakpoint.xlOnly}]">COVID-19: Post-Coronavirus technology trends</h1>
-                <p class="title text-white mt-6">Learn about actions we’re taking to fight racism inside and outside of Accenture.</p>
-                <v-btn large depressed :ripple="false" class="fs-button-dark mt-6" color="white">Leer artículo <v-icon right>mdi-arrow-right</v-icon></v-btn>
+                <p class="title text-white">{{popularPost.category.name}}</p>
+                <h1 class="mt-6" v-bind:class="[{'header': !$vuetify.breakpoint.xlOnly}]">{{popularPost.title}}</h1>
+                <p class="title text-white mt-6">{{popularPost.summary}}</p>
+                <v-btn large depressed :ripple="false" class="fs-button-dark mt-6" color="white">Leer artículo completo<v-icon right>mdi-arrow-right</v-icon></v-btn>
               </div>
             </v-col>
           </v-row>
         </v-container>
       </div>
-      <div class="fs-landing-post-image">
+      <div class="fs-landing-post-image" :style="`background: url('${popularPost.imageUrl}') no-repeat center`">
       </div>
     </div>
     <v-container :fluid="$vuetify.breakpoint.xsOnly">
@@ -25,7 +25,7 @@
         <v-col
           cols="12"
           md="4"
-          v-for="post in recentPosts"
+          v-for="post in morePost"
           :key="'recent' + post.id">
           <BlogPopular
             :postId="post.id"
@@ -75,7 +75,6 @@
 }
 
 .fs-landing-post-image {
-  background: url("~assets/img/landing-heading.jpg") no-repeat center;
   background-size: cover;
   width: 100%;
   height: 100%;
@@ -97,6 +96,7 @@ export default class LandingBlog extends Vue {
   public allPosts = [];
   public recentPosts = [];
   public morePost = [];
+  public popularPostIndex = 2;
   public popularPost: IPost = {
     id: 0,
     article: '',
@@ -114,9 +114,9 @@ export default class LandingBlog extends Vue {
   async mounted () {
     try {
       this.allPosts = await this.$strapi.find('posts');
-      this.popularPost = this.allPosts[0];
-      this.recentPosts = this.allPosts.slice(1, 4);
-      this.morePost = this.allPosts.slice(1,4)
+      this.popularPost = this.allPosts[this.popularPostIndex];
+      this.allPosts.splice(this.popularPostIndex, 1)
+      this.morePost = this.allPosts.slice(0,4)
     } catch (error) {
       console.log(error);
     }

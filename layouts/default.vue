@@ -6,13 +6,13 @@
       flat
       color="black"
     >
-      <img class="fs-appbar__logo" src="~assets/img/fibo-logo.svg" alt="Logotipo Fibo Systems">
+      <nuxt-link style="line-height: 50%;" to="/"><img class="fs-appbar__logo" src="~assets/img/fibo-logo.svg" alt="Logotipo Fibo Systems"></nuxt-link>
       <v-spacer />
       <div v-if="!$vuetify.breakpoint.mobile" style="height: 100%;">
         <v-btn :ripple="false" nuxt to="/" exact exact-active-class="active" text color="white">Inicio</v-btn>
-        <v-btn :ripple="false" text to="/#services" color="white">Servicios</v-btn>
+        <v-btn :ripple="false" text @click="$route.path === '/' ? $vuetify.goTo('#servicesSection', optionsGoTo) : $router.push('/#servicesSection')" color="white">Servicios</v-btn>
         <v-btn :ripple="false" nuxt to="/blog" exact exact-active-class="active" text color="white">Insights</v-btn>
-        <v-btn :ripple="false" text color="white">Contacto</v-btn>
+        <v-btn :ripple="false" text color="white" @click="$route.path === '/' ? $vuetify.goTo('#contactSection', optionsGoTo) : $router.push('/#contactSection')">Contacto</v-btn>
       </div>
       <v-btn
         text
@@ -108,6 +108,7 @@
 .v-sheet.v-app-bar.v-toolbar {
   .v-toolbar__content {
     padding-top: 0;
+    border-top: 0;
     border-bottom: 1px solid rgb(255, 255, 255, 0.4);
     padding-bottom: 0;
   }
@@ -125,6 +126,10 @@
 export default {
   data () {
     return {
+      optionsGoTo: {
+        duration: 860,
+        easing: 'easeInOutQuart',
+      },
       showList: false,
       clipped: false,
       drawer: false,

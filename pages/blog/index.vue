@@ -16,7 +16,7 @@
     </div>
     <div class="container">
       <v-container>
-        <v-row :justify="!$vuetify.breakpoint.mobile ? 'space-around' : 'start'" :style="$vuetify.breakpoint.mobile ? 'flex-wrap: nowrap; overflow-x: scroll;' : ''">
+        <v-row v-if="false" :justify="!$vuetify.breakpoint.mobile ? 'space-around' : 'start'" :style="$vuetify.breakpoint.mobile ? 'flex-wrap: nowrap; overflow-x: scroll;' : ''">
           <v-col>
             <v-btn large block :ripple="false" text class="center">Todo</v-btn>
           </v-col>
@@ -30,7 +30,7 @@
             <v-btn large block :ripple="false" text class="center">Estretegìa</v-btn>
           </v-col>
         </v-row>
-        <v-row>
+        <v-row v-if="false">
           <v-col>
             <h1 class="text-center header my-10">Diseño</h1>
           </v-col>
