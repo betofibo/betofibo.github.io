@@ -1,7 +1,7 @@
 <template>
   <div class="fs-services" v-bind:class="[{ 'container': $vuetify.breakpoint.xsOnly }]">
     <v-container class="content-container">
-      <h2 class="text-white text-center py-16" :class="[{'header': $vuetify.breakpoint.xsOnly, 'display-2 ': !$vuetify.breakpoint.xsOnly}]">Soluciones</h2>
+      <h3 class="text-white text-center py-16" :class="[{'header': $vuetify.breakpoint.xsOnly, 'header': !$vuetify.breakpoint.xsOnly}]">Soluciones</h3>
       <div class="fs-service__detail-container">
           <v-card v-bind:class="[{ 'active': showServiceDetail }]" class="fs-service__detail pa-12">
         <v-scroll-y-reverse-transition>

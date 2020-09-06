@@ -7,9 +7,9 @@
     <div class="landing-header">
       <div class="landing-header__overlay">
       </div>
-      <v-container class="pa-6">
-          <v-row class="mt-12">
-            <v-col md="6" xs="12" sm="8" lg="8" xl="6" offset-sm="1" offset-md="0" offset-xl="2" style="z-index: 1; position: relative;">
+      <v-container class="mt-sm-16 mt-md-4">
+          <v-row class="mt-12 px-2">
+            <v-col md="6" xs="12" sm="8" lg="8" xl="6" offset-sm="1" offset-md="0" offset-xl="1" style="z-index: 1; position: relative;">
               <div class="landing-header-box">
                 <div class="landing-header-box__content">
                   <h1 class="text-white" v-bind:class="[{'subheader': $vuetify.breakpoint.xsOnly}, {'header': !$vuetify.breakpoint.mobile}, {'display-2': $vuetify.breakpoint.xlOnly}]">Descubre la importancia de la nube en la transformación digital <v-icon large color="white">mdi-arrow-right</v-icon></h1>
@@ -37,29 +37,146 @@
     </v-container>
     <LandingBlog></LandingBlog>
     <div class="fs-landing-project">
-      <v-container class="py-sm-16">
-        <div class="container">
-          <v-row>
-            <v-col cols="12" md="4" offset-md="1">
-              <h4 class="title">Proyecto</h4>
-              <h1 class="header my-8">General de Baleros</h1>
-              <p class="mt-8" v-bind:class="[{'body': $vuetify.breakpoint.xsOnly}, {'title': !$vuetify.breakpoint.xsOnly}]">Solución de ERP construido a la medida de las necesidades de la operación de General de Baleros.</p>
-            </v-col>
-            <v-col>
-              <img src="~assets/img/custom_erp.jpg" alt="">
-            </v-col>
+      <v-container fluid class="fill-height pa-0">
+        <div class="py-sm-16">
+          <v-row class="fill-height px-2 px-sm-2 py-4">
+            <v-container>
+              <v-row>
+                <v-col cols="12">
+                  <v-col cols="12" md="4" lg="5" offset-md="1" offset-lg="2" offset-xl="3">
+                    <h4 class="title text-sm-center text-md-left">Proyecto</h4>
+                    <h1 class="header my-8 text-sm-center text-md-left">General de Baleros</h1>
+                    <p class="mt-8 text-sm-center text-md-left" v-bind:class="[{'body': $vuetify.breakpoint.xsOnly}, {'title': !$vuetify.breakpoint.xsOnly}]">Solución de ERP construido a la medida de las necesidades de la operación de General de Baleros.</p>
+                  </v-col>
+                  <v-col>
+                    <img src="~assets/img/custom_erp.jpg" alt="">
+                  </v-col>
+                </v-col>
+              </v-row>
+            </v-container>
           </v-row>
         </div>
       </v-container>
     </div>
+    <div class="outro pa-16">
+      <div class="py-xl-16">
+        <div class="content py-12">
+          <p class="title mb-16 text-black-lighten-2 text-center">
+            Soluciones que siempre serán
+          </p>
+          <div class="outro-content text-black-lighten-4 text-center display-1">
+            <span class="mb-4 outro-word modern header">modernas</span>
+            <span class="mb-4 outro-word universal header">universales</span>
+            <span class="mb-4 outro-word secure header">seguras</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+    <ContactForm></ContactForm>
   </v-layout>
 </template>
 <style lang="scss">
 @import "assets/variables";
 @import '~vuetify/src/styles/settings/_variables';
 
+.outro {
+  padding-bottom: 4em;
+
+  .outro-content {
+    margin-top: 0.6em;
+
+    .outro-word {
+      display: inline-block;
+    }
+
+    span {
+      margin-right: 0.5em;
+      position: relative;
+      line-height: 0;
+      color: #dbdbdb;
+      animation-name: enfasis;
+      animation-duration: 6s;
+      animation-iteration-count: infinite;
+
+      &::after {
+        background: linear-gradient(71deg, #dbdbdb -12.04%, #dbdbdb 52.93%, #dbdbdb 86.32%, #dbdbdb 117.99%);
+        content: '';
+        position: absolute;
+        bottom: 0.3em;
+        right: -15px;
+        width: 10px;
+        height: 10px;
+        animation-name: square;
+        animation-duration: 6s;
+        animation-iteration-count: infinite;
+      }
+    }
+  }
+
+  .modern {
+    animation-delay: 0s;
+
+    &::after {
+      animation-delay: 0s;
+    }
+  }
+
+  .universal {
+    animation-delay: 2s;
+
+    &::after {
+      animation-delay: 2s;
+    }
+  }
+
+  .secure {
+    animation-delay: 4s;
+
+    &::after {
+      animation-delay: 4s;
+    }
+  }
+
+  @keyframes enfasis {
+    0% {
+      color: #dbdbdb;
+    }
+
+    23.333% {
+      color: #000;
+    }
+
+    33.333% {
+      color: #dbdbdb;
+    }
+
+    99.999% {
+      color: #dbdbdb;
+    }
+  }
+
+  @keyframes square {
+    0% {
+      background: linear-gradient(71deg, #dbdbdb -12.04%, #dbdbdb 52.93%, #dbdbdb 86.32%, #dbdbdb 117.99%);
+    }
+
+    23.333% {
+      background: linear-gradient(71deg, #7e3db0 -12.04%, #0094d8 52.93%, #00a5af 86.32%, #00a370 117.99%);
+    }
+
+    33.333% {
+      background: linear-gradient(71deg, #dbdbdb -12.04%, #dbdbdb 52.93%, #dbdbdb 86.32%, #dbdbdb 117.99%);
+    }
+
+    99.999% {
+      background: linear-gradient(71deg, #dbdbdb -12.04%, #dbdbdb 52.93%, #dbdbdb 86.32%, #dbdbdb 117.99%);
+    }
+  }
+}
+
 .fs-landing-project {
-  background-color: $black;
+  background-color: teal;
   color: $white;
   position: relative;
   width: 100%;
@@ -177,6 +294,14 @@
     }
   }
 }
+
+@media #{map-get($display-breakpoints, 'lg-and-up')} {
+  .fs-landing-project {
+    img {
+      right: -50%;
+    }
+  }
+}
 </style>
 <script lang="ts">
 import BlogPreview from "@/components/BlogPopular.vue";
@@ -185,12 +310,14 @@ import Component from "vue-class-component";
 import Vue from 'vue';
 import Services from "~/components/Services.vue";
 import LandingBlog from "~/components/LandingBlog.vue";
+import ContactForm from "~/components/ContactForm.vue";
 
 @Component({
   components: {
     BlogPreview,
     Services,
-    LandingBlog
+    LandingBlog,
+    ContactForm,
   }
 })
 export default class LandingPage extends Vue {

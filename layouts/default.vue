@@ -106,10 +106,9 @@
 }
 
 .v-sheet.v-app-bar.v-toolbar {
-  border-bottom: 1px solid rgb(255, 255, 255, 0.4);
-
   .v-toolbar__content {
     padding-top: 0;
+    border-bottom: 1px solid rgb(255, 255, 255, 0.4);
     padding-bottom: 0;
   }
 
