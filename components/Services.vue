@@ -186,14 +186,14 @@
       .v-card__text {
         .fs-services__element-title {
           position: absolute;
-          top: 2.5rem;
-          left: 2.5rem;
+          top: 1.5rem;
+          left: 1.5rem;
         }
 
         .fs-services__element-symbol.header {
           position: absolute;
-          bottom: 2rem;
-          left: 2.5rem;
+          bottom: 1rem;
+          left: 1.5rem;
         }
       }
     }
