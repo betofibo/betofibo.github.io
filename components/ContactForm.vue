@@ -12,9 +12,9 @@
               </v-row>
               <v-row class="text-white px-2 px-md-0 pl-xl-14 pb-4 pb-md-16">
                 <v-col cols="12" offset-sm="1" sm="8" offset-md="2" offset-xl="3">
-                    <a class="text-white title mb-2 d-inline-block">81 8654 6075</a>
+                    <a class="text-white title mb-2 d-inline-block" style="text-decoration: none;" href="tel:8186546075">81 8654 6075</a>
                     <v-spacer></v-spacer>
-                    <a class="text-white title">info@fibosystems.io</a>
+                    <a class="text-white title" href="mailto:info@fibosystems.io" style="text-decoration: none;">info@fibosystems.io</a>
                 </v-col>
               </v-row>
             </v-container>

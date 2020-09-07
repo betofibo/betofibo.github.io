@@ -41,7 +41,7 @@
           <v-list-item  :ripple="false" v-if="showList" nuxt to="/" :key="'inicioItem'" class="mb-4" @click.native="onItemSelection">
             <v-list-item-title><p class="subheader">Inicio</p></v-list-item-title>
           </v-list-item>
-          <v-list-item  :ripple="false" v-if="showList" nuxt to="/#services" :key="'serviciosItem'" class="mb-4" @click.native="onItemSelection">
+          <v-list-item  :ripple="false" v-if="showList" nuxt to="/#services" :key="'serviciosItem'" class="mb-4" @click.native="onClose(); $route.path === '/' ? $vuetify.goTo('#servicesSection', optionsGoTo) : $router.push('/#servicesSection')">
             <v-list-item-title><p class="subheader">Servicios</p></v-list-item-title>
           </v-list-item>
           <v-list-item  :ripple="false" v-if="showList" nuxt to="/blog" :key="'insightsItem'" class="mb-4" @click.native="onItemSelection">
@@ -49,32 +49,44 @@
           </v-list-item>
           <v-divider v-if="showList" nuxt to="/" :key="'divider1Item'" class="mb-4"></v-divider>
           <v-list-item  :ripple="false" v-if="showList" :key="'facebookItem'" @click.native="onItemSelection">
-            <v-list-item-title><p class="title">Facebook</p></v-list-item-title>
+            <v-list-item-title><a style="text-decoration: none;" class="text-white title"  target="_blank" href="https://www.facebook.com/FiboSystems">Facebook</a></v-list-item-title>
           </v-list-item>
           <v-list-item  :ripple="false" v-if="showList" :key="'linkedinItem'" @click.native="onItemSelection">
-            <v-list-item-title><p class="title">LinkedIn</p></v-list-item-title>
+            <v-list-item-title><a style="text-decoration: none;" class="text-white title" target="_blank" href="https://www.instagram.com/fibosystems/">Instagram</a></v-list-item-title>
           </v-list-item>
           <v-list-item  :ripple="false" v-if="showList" :key="'instagramItem'" class="mb-1" @click.native="onItemSelection">
-            <v-list-item-title><p class="title">Instagram</p></v-list-item-title>
+            <v-list-item-title><a style="text-decoration: none;" class="text-white title" target="_blank" href="https://www.linkedin.com/company/fibosystems">LinkedIn</a></v-list-item-title>
           </v-list-item>
           <v-divider v-if="showList" :key="'divider2Item'" class="mb-4 mt-4"></v-divider>
           <v-list-item :ripple="false" v-if="showList" :key="'telefonoItem'" @click.native="onItemSelection">
-            <v-list-item-title><p class="title">81 230 8556</p></v-list-item-title>
+            <v-list-item-title><a class="text-white title" style="text-decoration: none;" href="tel:8186546075">81 8654 6075</a></v-list-item-title>
           </v-list-item>
           <v-list-item  :ripple="false" v-if="showList" :key="'correoItem'" @click.native="onItemSelection">
-            <v-list-item-title><p class="title">info@fibosystems.io</p></v-list-item-title>
+            <v-list-item-title><a class="text-white title" style="text-decoration: none;" href="mailto:info@fibosystems.io">info@fibosystems.io</a></v-list-item-title>
           </v-list-item>
           <v-list-item :ripple="false" v-if="showList" class="mt-4" :key="'mensajeItem'">
-            <v-btn id="contactButton" text :ripple="false" color="teal">Deja tu mensaje<v-icon right>mdi-arrow-right</v-icon></v-btn>
+            <v-btn id="contactButton" text :ripple="false" color="teal" @click="onClose(); $route.path === '/' ? $vuetify.goTo('#contactSection', optionsGoTo) : $router.push('/#contactSection')">Deja tu mensaje<v-icon right>mdi-arrow-right</v-icon></v-btn>
           </v-list-item>
         </v-scroll-y-reverse-transition>
       </v-list>
     </v-navigation-drawer>
     <v-footer
+      color="grey"
       :absolute="!fixed"
       app
     >
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+      <v-container fluid>
+        <v-row justify="space-between" class="px-4">
+          <v-col cols="12" md="auto">
+            <p class="text-center text-white body">&copy; {{ new Date().getFullYear() }} Fibo Systems</p>
+          </v-col>
+          <v-col cols="auto" v-if="!$vuetify.breakpoint.mobile">
+            <span><a class="text-white" href="https://www.facebook.com/FiboSystems" target="_blank">Facebook</a></span>
+            <span><a class="text-white ml-4" href="https://www.instagram.com/fibosystems/" target="_blank">Instagram</a></span>
+            <span><a class="text-white ml-4" href="https://www.linkedin.com/company/fibosystems" target="_blank">LinkedIn</a></span>
+          </v-col>
+        </v-row>
+      </v-container>
     </v-footer>
   </v-app>
 </template>

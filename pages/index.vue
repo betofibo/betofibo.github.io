@@ -13,8 +13,8 @@
               <div class="landing-header-box">
                 <div class="landing-header-box__content">
                   <nuxt-link to="/blog/posts/5f53289ebb5d9e00179a945e" style="text-decoration: none;">
-                    <h1 class="text-white" v-bind:class="[{'subheader': $vuetify.breakpoint.xsOnly}, {'header': !$vuetify.breakpoint.mobile}, {'display-2': $vuetify.breakpoint.xlOnly}]">Descubre la importancia de la nube en la transformación digital <v-icon large color="teal">mdi-arrow-right</v-icon></h1>
-                    <p class="title text-white" style="opacity: 0.9;">Need a fresh perspective on tomorrow? Accenture Insights has the latest business trends, solutions and visions for the future. We're happy to share.</p>
+                    <h1 class="text-white" v-bind:class="[{'subheader': $vuetify.breakpoint.xsOnly}, {'header': !$vuetify.breakpoint.mobile}, {'display-2': $vuetify.breakpoint.xlOnly}]">Desarrollo ágil que te ayudará a estar un paso adelanta de la competencia.<v-icon large color="teal">mdi-arrow-right</v-icon></h1>
+                    <p class="title text-white" style="opacity: 0.9;">Averigua cómo las empresas de hoy dan solución a sus más grandes retos con soluciones de software modernas.</p>
                   </nuxt-link>
                 </div>
               </div>
@@ -29,7 +29,6 @@
             <div class="fs-landing-quote">
               <div class="fs-landing-quote__box"></div>
               <h4 class="title fs-landing-quote__content text-black-lighten-2">
-                Nustro proceso de desarrollo ágil ayudará a generar un cambio disruptivo en la manera en la tu compañis opera.
                 Unimos el mejor talento y tencología para generar soluciones que aportan valor inmdiato a tu negocio,
                 enfocando nuestrso recursos y habilidades en entender y resolver las necesidades de tu negocio.
               </h4>
@@ -64,12 +63,12 @@
       <div class="py-xl-16">
         <div class="content py-12">
           <p class="title mb-16 text-black-lighten-2 text-center">
-            Soluciones que siempre serán
+            Soluciones construidas con software
           </p>
           <div class="outro-content text-black-lighten-4 text-center display-1">
-            <span class="mb-4 outro-word modern header">modernas</span>
-            <span class="mb-4 outro-word universal header">universales</span>
-            <span class="mb-4 outro-word secure header">seguras</span>
+            <span class="mb-4 outro-word modern header">moderno</span>
+            <span class="mb-4 outro-word universal header">universal</span>
+            <span class="mb-4 outro-word secure header">seguro</span>
           </div>
         </div>
       </div>
