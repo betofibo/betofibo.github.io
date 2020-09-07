@@ -29,8 +29,8 @@
             <div class="fs-landing-quote">
               <div class="fs-landing-quote__box"></div>
               <h4 class="title fs-landing-quote__content text-black-lighten-2">
-                Unimos el mejor talento y tencología para generar soluciones que aportan valor inmdiato a tu negocio,
-                enfocando nuestrso recursos y habilidades en entender y resolver las necesidades de tu negocio.
+                Unimos el mejor talento y tecnología para generar soluciones que aportan valor inmediato a tu negocio,
+                enfocamos nuestro proceso y recursos en entender y resolver las necesidades y problemas que pueda enfrentar tu operación.
               </h4>
             </div>
         </v-col>
@@ -63,7 +63,7 @@
       <div class="py-xl-16">
         <div class="content py-12">
           <p class="title mb-16 text-black-lighten-2 text-center">
-            Soluciones construidas con software
+            Soluciones construidas con software...
           </p>
           <div class="outro-content text-black-lighten-4 text-center display-1">
             <span class="mb-4 outro-word modern header">moderno</span>

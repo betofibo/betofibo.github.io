@@ -53,6 +53,9 @@ export default {
     // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module',
     '@nuxtjs/vuetify',
+    '@nuxtjs/google-analytics', {
+      id: 'UA-154633949-1'
+    }
   ],
   /*
   ** Nuxt.js modules
