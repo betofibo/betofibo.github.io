@@ -13,7 +13,7 @@
               <div class="landing-header-box">
                 <div class="landing-header-box__content">
                   <nuxt-link to="/blog/posts/5f53289ebb5d9e00179a945e" style="text-decoration: none;">
-                    <h1 class="text-white" v-bind:class="[{'subheader': $vuetify.breakpoint.xsOnly}, {'header': !$vuetify.breakpoint.mobile}, {'display-2': $vuetify.breakpoint.xlOnly}]">Desarrollo ágil que te ayudará a estar un paso adelanta de la competencia.<v-icon large color="teal">mdi-arrow-right</v-icon></h1>
+                    <h1 class="text-white" v-bind:class="[{'subheader': $vuetify.breakpoint.xsOnly}, {'header': !$vuetify.breakpoint.mobile}, {'display-2': $vuetify.breakpoint.xlOnly}]">Desarrollo ágil que te ayudará a estar un paso adelanta de la competencia<v-icon large color="teal">mdi-arrow-right</v-icon></h1>
                     <p class="title text-white" style="opacity: 0.9;">Averigua cómo las empresas de hoy dan solución a sus más grandes retos con soluciones de software modernas.</p>
                   </nuxt-link>
                 </div>
