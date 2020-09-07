@@ -131,10 +131,15 @@ import {IPost} from "~/models";
 import Component from "vue-class-component";
 import Vue from 'vue';
 
-@Component({
+@Component<any>({
+  head() {
+    return {
+      title: 'Fibo Systems | Insights',
+    }
+  },
   components: {
     BlogPreview
-  }
+  },
 })
 export default class BlogPage extends Vue {
   $strapi: any;
@@ -155,15 +160,15 @@ export default class BlogPage extends Vue {
     }
   };
 
-  async head() {
-    return {
+  public head = {
       meta: [
         {
-
+          hid: 'title',
+          name: 'title',
+          content: 'Fibo Systems | Insights'
         }
       ]
     }
-  }
 
   async mounted () {
     try {

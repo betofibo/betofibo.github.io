@@ -16,12 +16,11 @@ export default {
   ** See https://nuxtjs.org/api/configuration-head
   */
   head: {
-    titleTemplate: 'Fibo Systems - Consultoría en desarrollo de soluciones de software',
-    title: process.env.npm_package_name || '',
+    title: 'Fibo Systems | Consultoría en desarrollo de soluciones de software',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Desarollo de software a la medida, aplicaciones en la nube, aplicaciones mòviles, comercio electrònico y diseño de experiencia de usuario.' }
+      { hid: 'description', name: 'description', content: 'Desarrollo de software a la medida, aplicaciones en la nube, aplicaciones móviles, comercio electrònico y diseño de experiencia de usuario.' }
     ],
     link: [
       { rel: 'icon', type: 'image/png', href: '/favicon.png' }

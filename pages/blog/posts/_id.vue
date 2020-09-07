@@ -121,7 +121,33 @@ import BlogPreview from "~/components/BlogPopular.vue";
 import {Component} from "vue-property-decorator";
 import ContactForm from "~/components/ContactForm.vue";
 
-@Component({
+@Component<any>({
+  async asyncData({ params, error }: any) {
+    const post = await Vue.prototype.$nuxt.$strapi.find(`posts/${params.id}`);
+    const allPosts = await Vue.prototype.$nuxt.$strapi.find('posts');
+
+    return {
+      post: post,
+      content: post.article || '',
+      morePosts: allPosts.slice(1,3),
+    }
+  },
+  head(this: Post) {
+    return {
+      title: 'Fibo Insights | ' + this.post.title,
+      meta: [
+        {
+          name: 'og:title', content: this.post.title,
+        },
+        {
+          name: 'og:description', content: this.post.summary,
+        },
+        {
+          name: 'og:image', content: this.post.imageUrl,
+        },
+      ],
+    }
+  },
   components: {
     BlogPreview,
     ContactForm,
@@ -137,15 +163,5 @@ export default class Post extends Vue {
   public content = '';
   public morePosts = [];
 
-  async mounted() {
-    try {
-      this.post = await this.$strapi.find(`posts/${this.$route.params.id}`);
-      this.content = this.post.article || '';
-      this.morePosts = await this.$strapi.find('posts');
-      this.morePosts = this.morePosts.slice(1,3);
-    } catch (error) {
-      console.log(error);
-    }
-  }
 }
 </script>

@@ -116,6 +116,6 @@ export default class BlogPreview extends Vue {
   @Prop({ type: String, required: true }) readonly date!: string;
   @Prop({ type: String, required: true }) readonly author!: string;
   @Prop({ type: String, required: true }) readonly thumbnail!: string;
-  @Prop({ type: Number, required: true }) readonly postId!: number;
+  @Prop({ type: String, required: true }) readonly postId!: number;
 }
 </script>
