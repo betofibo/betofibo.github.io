@@ -6,12 +6,12 @@
         </div>
         <v-container>
           <v-row style="height: 100%;" align="center" class="px-2 py-4">
-            <v-col cols="12" offset-sm="2" offset-md="3" sm="8" xl="5" style="z-index: 2;">
+            <v-col cols="12" offset-sm="2" offset-md="3" sm="8" md="6" lg="6" style="z-index: 2;">
               <div class="py-sm-16">
                 <p class="title text-white">{{popularPost.category.name}}</p>
-                <h1 class="mt-6" v-bind:class="[{'header': !$vuetify.breakpoint.xlOnly}]">{{popularPost.title}}</h1>
+                <h1 class="mt-6" v-bind:class="[{'header': !$vuetify.breakpoint.xlOnly}, {'subheader': $vuetify.breakpoint.xsOnly}]">{{popularPost.title}}</h1>
                 <p class="title text-white mt-6">{{popularPost.summary}}</p>
-                <v-btn large depressed :ripple="false" class="fs-button-dark mt-6" color="white">Leer artículo completo<v-icon right>mdi-arrow-right</v-icon></v-btn>
+                <v-btn nuxt :to="`blog/posts/${this.popularPost.id}`" large depressed :ripple="false" class="fs-button-dark mt-6" color="white">Leer artículo completo<v-icon right>mdi-arrow-right</v-icon></v-btn>
               </div>
             </v-col>
           </v-row>
@@ -21,7 +21,7 @@
       </div>
     </div>
     <v-container :fluid="$vuetify.breakpoint.xsOnly">
-      <v-row>
+      <v-row class="px-2">
         <v-col
           cols="12"
           md="4"
@@ -38,7 +38,7 @@
           />
         </v-col>
         <hr color="grey" width="100%">
-        <v-btn block text large color="black" :ripple="false">Leer todo <v-icon right>mdi-arrow-right</v-icon></v-btn>
+        <v-btn block text nuxt to="/blog" large color="black" :ripple="false">Leer todo <v-icon right>mdi-arrow-right</v-icon></v-btn>
         <hr color="grey" width="100%" class="mb-6">
       </v-row>
     </v-container>

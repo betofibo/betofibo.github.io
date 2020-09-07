@@ -9,7 +9,7 @@
           <v-row class="mt-12">
             <v-col md="6" xs="12" sm="10" offset-sm="1" offset-md="0">
               <h1 class="display-2">Insights</h1>
-              <p class="title" style="opacity: 0.7;">Need a fresh perspective on tomorrow? Accenture Insights has the latest business trends, solutions and visions for the future. We're happy to share.</p>
+              <p class="title" style="opacity: 0.7;">Una colección de artículos y recursos que te ayudarán a mantenerte actualizado en temas de tecnología, diseño y agilidad corporativa. </p>
             </v-col>
           </v-row>
       </v-container>
@@ -154,6 +154,16 @@ export default class BlogPage extends Vue {
       name: '',
     }
   };
+
+  async head() {
+    return {
+      meta: [
+        {
+
+        }
+      ]
+    }
+  }
 
   async mounted () {
     try {

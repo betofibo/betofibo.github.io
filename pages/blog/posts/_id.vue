@@ -5,7 +5,7 @@
       <div class="fs-post-cover" v-bind:style="{ 'background-image': 'url(' + post.imageUrl + ')' }"></div>
       <v-container style="height: 100%;">
         <v-row class="container" style="height: 100%;">
-          <v-col sm="10" offset-sm="1" md="10" lg="6" offset-md="3" style="position: relative; height: 100%;">
+          <v-col sm="10" offset-sm="1" md="10" lg="6" xl="4" offset-md="3" style="position: relative; height: 100%;">
             <div class="fs-post-header__content">
               <h5 class="text-white base">{{post.category.name}}</h5>
               <h3 class="my-2 header text-white my-6">
@@ -20,7 +20,7 @@
       </v-container>
     </div>
     <v-container>
-      <v-row class="container">
+      <v-row>
         <v-col sm="10" offset-sm="1" md="10" lg="6" offset-md="3">
           <div class="fs-post-content">
             <div  v-html="$md.render(content)">
@@ -28,25 +28,29 @@
           </div>
         </v-col>
       </v-row>
-      <v-row class="container">
+      <v-row>
         <v-col sm="10" offset-sm="1" md="10" lg="6" offset-md="3">
           <h2 class="mt-4 title text-black-lighten-2">Más contenido</h2>
           <v-divider class="black mb-lg-12"></v-divider>
-          <BlogPopular
-            v-for="post in morePosts"
-            :key="'recent' + post.id"
-            :postId="post.id"
-            small
-            class="mb-16 mt-4"
-            :title="post.title"
-            :summary="post.summary"
-            :author="post.author"
-            :date="post.date"
-            :thumbnail="post.thumbnailUrl"
-          />
+          <v-row>
+            <v-col cols="12" md="6"
+                   v-for="post in morePosts"
+                   :key="'recent' + post.id">
+              <BlogPopular
+                :postId="post.id"
+                class="mb-16 mt-4"
+                :title="post.title"
+                :summary="post.summary"
+                :author="post.author"
+                :date="post.date"
+                :thumbnail="post.thumbnailUrl"
+              />
+            </v-col>
+          </v-row>
         </v-col>
       </v-row>
     </v-container>
+    <ContactForm />
   </div>
 </template>
 
@@ -115,10 +119,12 @@ import Vue from 'vue';
 import {IPost} from "~/models";
 import BlogPreview from "~/components/BlogPopular.vue";
 import {Component} from "vue-property-decorator";
+import ContactForm from "~/components/ContactForm.vue";
 
 @Component({
   components: {
-    BlogPreview
+    BlogPreview,
+    ContactForm,
   }
 })
 export default class Post extends Vue {
@@ -133,7 +139,7 @@ export default class Post extends Vue {
 
   async mounted() {
     try {
-      this.post = await this.$strapi.find(`posts/${parseInt(this.$route.params.id)}`);
+      this.post = await this.$strapi.find(`posts/${this.$route.params.id}`);
       this.content = this.post.article || '';
       this.morePosts = await this.$strapi.find('posts');
       this.morePosts = this.morePosts.slice(1,3);

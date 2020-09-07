@@ -35,6 +35,7 @@
       clipped
       color="black"
     >
+      <v-btn large class="float-right ma-4" icon text depressed color="white" @click="onClose"><v-icon>mdi-close</v-icon></v-btn>
       <v-list class="mt-16 px-10">
         <v-scroll-y-reverse-transition group>
           <v-list-item  :ripple="false" v-if="showList" nuxt to="/" :key="'inicioItem'" class="mb-4" @click.native="onItemSelection">
@@ -170,6 +171,10 @@ export default {
     },
     onItemSelection: function () {
       this.showList = !this.showList;
+      this.rightDrawer = false;
+    },
+    onClose: function () {
+      this.showList = false;
       this.rightDrawer = false;
     }
   }

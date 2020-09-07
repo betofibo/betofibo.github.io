@@ -12,8 +12,10 @@
             <v-col md="6" xs="12" sm="8" lg="8" xl="6" offset-sm="1" offset-md="0" offset-xl="1" style="z-index: 1; position: relative;">
               <div class="landing-header-box">
                 <div class="landing-header-box__content">
-                  <h1 class="text-white" v-bind:class="[{'subheader': $vuetify.breakpoint.xsOnly}, {'header': !$vuetify.breakpoint.mobile}, {'display-2': $vuetify.breakpoint.xlOnly}]">Descubre la importancia de la nube en la transformación digital <v-icon large color="white">mdi-arrow-right</v-icon></h1>
-                  <p class="title text-white" style="opacity: 0.9;">Need a fresh perspective on tomorrow? Accenture Insights has the latest business trends, solutions and visions for the future. We're happy to share.</p>
+                  <nuxt-link to="/blog/posts/5f53289ebb5d9e00179a945e" style="text-decoration: none;">
+                    <h1 class="text-white" v-bind:class="[{'subheader': $vuetify.breakpoint.xsOnly}, {'header': !$vuetify.breakpoint.mobile}, {'display-2': $vuetify.breakpoint.xlOnly}]">Descubre la importancia de la nube en la transformación digital <v-icon large color="teal">mdi-arrow-right</v-icon></h1>
+                    <p class="title text-white" style="opacity: 0.9;">Need a fresh perspective on tomorrow? Accenture Insights has the latest business trends, solutions and visions for the future. We're happy to share.</p>
+                  </nuxt-link>
                 </div>
               </div>
             </v-col>
@@ -27,9 +29,9 @@
             <div class="fs-landing-quote">
               <div class="fs-landing-quote__box"></div>
               <h4 class="title fs-landing-quote__content text-black-lighten-2">
-                Our software development process drives innovation that can provide disrupting results through an entire
-                organization by bringing the best people in house to collaborate and create solutions that will always provide
-                true and lasting value for your organization.
+                Nustro proceso de desarrollo ágil ayudará a generar un cambio disruptivo en la manera en la tu compañis opera.
+                Unimos el mejor talento y tencología para generar soluciones que aportan valor inmdiato a tu negocio,
+                enfocando nuestrso recursos y habilidades en entender y resolver las necesidades de tu negocio.
               </h4>
             </div>
         </v-col>

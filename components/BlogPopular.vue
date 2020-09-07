@@ -6,7 +6,7 @@
     </div>
     <div>
       <div class="heading px-xl-8">
-        <h3 class="my-2" v-bind:class="[{ subheader: !large & !small}, { header: large }, { title: small }]">
+        <h3 class="my-2" v-bind:class="[{ subheader: !large & !small}, { header: large }, { title: small }, { 'my-xl-8': !small } ]">
           {{ title }}
         </h3>
         <div v-bind:class="[{ base: !small }, { caption: small }]">
@@ -47,6 +47,7 @@
   .thumbnail {
     overflow: hidden;
     height: 200px;
+    min-width: 133px;
     position: relative;
 
     .overlay {
@@ -68,6 +69,13 @@
         height: 350px;
       }
     }
+
+    &.fs-post-preview--small {
+      .thumbnail {
+        min-width: 133px;
+        max-width: 133px;
+      }
+    }
   }
 
   &.fs-post-preview--small {
@@ -78,7 +86,6 @@
     }
 
     .thumbnail {
-      min-width: 90px;
       height: 90px;
       margin-top: 0.5em;
       margin-right: 1em;
