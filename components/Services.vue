@@ -8,25 +8,17 @@
             <div v-if="showServiceDetailContent">
               <v-row>
                 <v-col md="6" sm="8">
-                  <h3 class="text-white" :class="[{'subheader': $vuetify.breakpoint.xsOnly}, {'display-2': $vuetify.breakpoint.smAndUp}]">Amplicaciones basadas en la nube</h3>
-                  <p class="text-white" :class="[{'body': $vuetify.breakpoint.xsOnly}, {'title': $vuetify.breakpoint.smAndUp}]">Soluciones de software a la medida que permitairan a tu equipo operar desde cualquier lugar</p>
+                  <h3 class="text-white" :class="[{'subheader': $vuetify.breakpoint.xsOnly}, {'display-2': $vuetify.breakpoint.smAndUp}]">{{servicioSeleccionado.title}}</h3>
+                  <p class="text-white" :class="[{'body': $vuetify.breakpoint.xsOnly}, {'title': $vuetify.breakpoint.smAndUp}]">{{servicioSeleccionado.text}}</p>
                 </v-col>
                 <v-col md="6" sm="10">
                   <v-list color="transparent" class="ml-0">
-                    <v-list-item >
+                    <v-list-item v-for="item in servicioSeleccionado.items">
                       <v-list-item-icon>
                         <v-icon color="white">mdi-square-medium</v-icon>
                       </v-list-item-icon>
                       <v-list-item-content>
-                        <p class="text-white" :class="[{'body': $vuetify.breakpoint.xsOnly}, {'title': $vuetify.breakpoint.smAndUp}]">Incursiona en nuevos mercados</p>
-                      </v-list-item-content>
-                    </v-list-item>
-                    <v-list-item>
-                      <v-list-item-icon>
-                        <v-icon color="white">mdi-square-medium</v-icon>
-                      </v-list-item-icon>
-                      <v-list-item-content>
-                        <p class="text-white" :class="[{'body': $vuetify.breakpoint.xsOnly}, {'title': $vuetify.breakpoint.smAndUp}]">Desarrolla estrategias que permitan operar agilmente</p>
+                        <p class="text-white" :class="[{'body': $vuetify.breakpoint.xsOnly}, {'body': $vuetify.breakpoint.smAndUp}]">{{item}}</p>
                       </v-list-item-content>
                     </v-list-item>
                   </v-list>
@@ -46,8 +38,8 @@
           </v-card>
       </div>
       <v-row justify="space-around">
-        <v-col cols="6" sm="auto" md="auto" lg="auto" v-for="item in servicesList">
-          <v-card class="fs-services__element" elevation="8" @click="onServiceElementClick">
+        <v-col cols="6" sm="auto" md="auto" lg="auto" v-for="(item, index) in servicesList">
+          <v-card class="fs-services__element" elevation="8" @click="onServiceElementClick(index)">
             <v-card-text class="pa-12">
               <h5 class="text-white fs-services__element-title"  v-bind:class="[{ 'title': !$vuetify.breakpoint.xsOnly }, { 'body': $vuetify.breakpoint.xsOnly }]">{{item.title}}</h5>
               <p :style="`background: linear-gradient(${item.color1},${item.color2}); -webkit-background-clip: text; -webkit-text-fill-color: transparent;`" class="text-white fs-services__element-symbol" v-bind:class="[{ 'header': !$vuetify.breakpoint.xsOnly }, { 'title': $vuetify.breakpoint.xsOnly }]">{{item.symbol}}</p>
@@ -208,24 +200,51 @@ import { Vue, Component, Prop } from 'vue-property-decorator';
 export default class Services extends Vue {
   public showServiceDetail = false;
   public showServiceDetailContent = false;
+  public servicioSeleccionado: any = {};
   public servicesList = [
     {
-      title: 'Aplicaciones en la nube',
+      title: 'Aplicaciones a la medida en la nube',
       symbol: 'Wb',
       color1: '#48c6ef',
       color2: '#6f86d6',
+      text: 'Soluciones de software basado en la nube construidas con tecnologías web que permitirán agilizar tu negocio' +
+        'al tener tus recursos y datos accesibles desde cualquier lugar asegurando la continuidad de tu operación a distancia.',
+      items: ['Tu aplicación y datos podrán ser accesibles desde cualquier lugar de forma segura', 'Cambios a tus procesos y aplicaciones serán distribuidos rápidamente',
+        'Evita pérdida de información almacenada en servidores locales', 'Reduce costos en mantenimiento y capacitación con la ayuda de Microsoft Azure y Amazon Web Services',
+        'Evita adaptar tu negocio a los productos existentes en el mercado, en su lugar invierte en soluciones a la medida que puedas adaptar a las necesidades de tu negocio.',
+        'Permite a tus usuarios acceder a tus servicios desde cualquier dispositivo sin importar la plataforma en la que se encuentren'
+      ]
     },
     {
       title: 'Aplicaciones móviles',
       symbol: 'Ap',
       color1: '#37ecba',
-      color2: '#72afd3'
+      color2: '#72afd3',
+      text: 'Más del 50% de los usuarios que navegan en internet usan dispositivos móviles en lugar de computadoras de escritorio. Desarrollamos aplicaciones compatibles con cualquier' +
+        'dispositivo móvil Android o iOS que te permitirán tener un mejor alcance.',
+      items: ['Brinda mayor movilidad a tus empleados y usuarios al hacer accesibles tus servicios desde dispositivos móviles.',
+        'La mayor parte del consumo de serivicios digitales hoy en día se hace a través de dispositivos móviles.',
+      'Nuestras soluciones son universales, una vez creada tu aplicación, será compatible con las más importantes plataformas de software y tiendas de aplicaciones.'],
     },
     {
       title: 'Aplicaciones de comercio electrónico',
       symbol: 'Ec',
       color1: '#3d3393',
-      color2: '#35eb93'
+      color2: '#35eb93',
+      text: 'Vender en línea es más fácil que nunca, y los beneficios que ofrece permitirán a tu negocio lograr un mayor alcance y crecimiento al mismo tiempo que reduces costos.',
+      items: ['Reduce costos evitando renta de espacios físicos.', 'Explora nuevos mercados y distribuye tus productos de forma nacional.',
+        'Mejora la lealtad de tus clientes con campañas de marketing para consumo electrónico.', 'Obtén un mayor alcance de público.'
+      ],
+    },
+    {
+      title: 'Migración de legacy software',
+      symbol: 'Mg',
+      color1: '#3d3393',
+      color2: '#35eb93',
+      text: 'Actualiza tus productos de software actuales a tecnologías modernas que ofrecerán mayor robustez y flexibilidad a tu negocio.',
+      items: ['Reduce riesgos de seguridad al optar por tecnologías con actualizaciones constantes.', 'Adquiere nuevo talento preparado con las tencologías del futuro.',
+        'Actualiza la implementación de tus procesos para cubrir necesidades tu negocio que no habían sido descubiertas.', 'Explota el uso de nuevas tecnologías para crear productos más avanzados.'
+      ],
     },
     {
       title: 'Capacitación Agilidad Competitiva',
@@ -237,17 +256,15 @@ export default class Services extends Vue {
       title: 'Diseño de Experiencia de Usuario',
       symbol: 'Ux',
       color1: '#b465da',
-      color2: '#ee609c'
-    },
-    {
-      title: 'Diseño de marca',
-      symbol: 'Bd',
-      color1: '#feec8b',
-      color2: '#f78ca0'
+      color2: '#ee609c',
+      text: 'Nuestro proceso y herramientas de diseño nos permiten identificar los problemas que enfrenta tu operación, creando soluciones que son atractivas y fáciles de usar',
+      items: ['Mejora la usabilidad de tus aplicaciones y evita usuarios frustados que abandonan tus servicios.', 'Evita problemas en tu operación por uso deficiente de tus aplicaciones y procesos mal implementados.',
+        'Brinda mayor comfort a tus usuarios al ofrecer productos fáciles de usar.', 'Distingue tus productos en el mercado gracias a un diseño atractivo y moderno.',]
     }
   ];
 
-  public onServiceElementClick() {
+  public onServiceElementClick(index: number) {
+    this.servicioSeleccionado = this.servicesList[index];
     this.showServiceDetail = true;
     setTimeout(() => this.showServiceDetailContent = true, 500);
   }
