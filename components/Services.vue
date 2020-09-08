@@ -28,6 +28,7 @@
         </v-scroll-y-reverse-transition>
             <div id="closeButton">
               <v-btn
+                style="background-color: rgba(0, 0, 0, 0.2); backdrop-filter: blur(20px);"
                 block
                 color="white"
                 :ripple="false"
@@ -43,6 +44,7 @@
             <v-card-text class="pa-12">
               <h5 class="text-white fs-services__element-title"  v-bind:class="[{ 'title': !$vuetify.breakpoint.xsOnly }, { 'body': $vuetify.breakpoint.xsOnly }]">{{item.title}}</h5>
               <p :style="`background: linear-gradient(${item.color1},${item.color2}); -webkit-background-clip: text; -webkit-text-fill-color: transparent;`" class="text-white fs-services__element-symbol" v-bind:class="[{ 'header': !$vuetify.breakpoint.xsOnly }, { 'title': $vuetify.breakpoint.xsOnly }]">{{item.symbol}}</p>
+              <v-icon color="grey" style="opacity: 0.2;" v-if="$vuetify.breakpoint.mobile">mdi-arrow-right</v-icon>
             </v-card-text>
           </v-card>
         </v-col>
@@ -113,6 +115,12 @@
     transition: background 300ms ease-in;
     background: black !important;
     margin: 0;
+
+    .v-icon {
+      position: absolute;
+      right: 0.125em;
+      bottom: 0.85em;
+    }
 
     &:hover {
       background: linear-gradient(6.41deg, #2dc9b6 -0.05%, rgba(59, 127, 142, 0.72) 44.76%, rgba(12, 175, 198, 0) 105.59%) !important;
