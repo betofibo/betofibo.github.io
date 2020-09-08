@@ -12,9 +12,9 @@
                   <p class="text-white" :class="[{'body': $vuetify.breakpoint.xsOnly}, {'title': $vuetify.breakpoint.smAndUp}]">{{servicioSeleccionado.text}}</p>
                 </v-col>
                 <v-col md="6" sm="10">
-                  <v-list color="transparent" class="ml-0">
+                  <v-list color="transparent" class="ml-0" style="max-height: calc(100% - 60px); overflow-y: auto;">
                     <v-list-item v-for="item in servicioSeleccionado.items">
-                      <v-list-item-icon>
+                      <v-list-item-icon class="mr-5">
                         <v-icon color="white">mdi-square-medium</v-icon>
                       </v-list-item-icon>
                       <v-list-item-content>
