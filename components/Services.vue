@@ -44,7 +44,7 @@
             <v-card-text class="pa-12">
               <h5 class="text-white fs-services__element-title"  v-bind:class="[{ 'title': !$vuetify.breakpoint.xsOnly }, { 'body': $vuetify.breakpoint.xsOnly }]">{{item.title}}</h5>
               <p :style="`background: linear-gradient(${item.color1},${item.color2}); -webkit-background-clip: text; -webkit-text-fill-color: transparent;`" class="text-white fs-services__element-symbol" v-bind:class="[{ 'header': !$vuetify.breakpoint.xsOnly }, { 'title': $vuetify.breakpoint.xsOnly }]">{{item.symbol}}</p>
-              <v-icon color="grey" style="opacity: 0.2;" v-if="$vuetify.breakpoint.mobile">mdi-arrow-right</v-icon>
+              <v-icon color="grey" style="opacity: 0.3;" v-if="$vuetify.breakpoint.mobile">mdi-arrow-right</v-icon>
             </v-card-text>
           </v-card>
         </v-col>
